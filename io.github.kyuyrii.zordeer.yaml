@@ -43,7 +43,7 @@ add-extensions:
     autodelete: false
 
   org.kde.KStyle.Kvantum:
-    version: '25.08'
+    version: '6.10'
     autodownload: true
     autodelete: false
 
