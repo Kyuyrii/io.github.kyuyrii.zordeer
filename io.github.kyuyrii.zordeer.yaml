@@ -27,10 +27,10 @@ finish-args:
   - --filesystem=/run/media
 
 inherit-extensions:
-  - org.freedesktop.Platform.GL32
-  - org.freedesktop.Platform.Compat.i386
   - org.winehq.Wine.gecko
   - org.winehq.Wine.mono
+  - org.freedesktop.Platform.GL32
+  - org.freedesktop.Platform.Compat.i386
   - org.freedesktop.Platform.codecs_extra.i386
   - org.freedesktop.Platform.VAAPI.Intel.i386
   - org.freedesktop.Platform.VAAPI.nvidia.i386
@@ -44,13 +44,12 @@ add-extensions:
 
 modules:
   - name: Zordeer
-    builddir: true
     buildsystem: simple
     sources:
       - type: git
         url: https://github.com/Kyuyrii/Zordeer.git
-        tag: '7.1'
-        commit: 43cfaf30b16c0353106b1671b67bd9f39268e771
+        tag: '7.2'
+        commit: fdbe3e08befe65d81b93ebf8600f6c2015ce5549
     build-commands:
       - install -Dm755 zordeer /app/bin/zordeer
       - install -Dm644 io.github.kyuyrii.zordeer.desktop /app/share/applications/io.github.kyuyrii.zordeer.desktop
