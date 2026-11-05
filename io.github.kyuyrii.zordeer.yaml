@@ -1,18 +1,17 @@
 app-id: io.github.kyuyrii.zordeer
 sdk: org.kde.Sdk
 runtime: org.kde.Platform
-runtime-version: &runtime-version '6.11'
+runtime-version: '6.11'
 command: zordeer
 separate-locales: false # translations
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: *runtime-version
+base-version: '6.11'
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
 build-options:
   env:
     - BASEAPP_REMOVE_WEBENGINE=1
 
-freedesktop-runtime-version: &freedesktop-runtime-version '25.08'
 x-gl-version: &gl-version '1.4'
 x-gl-versions: &gl-versions 25.08;25.08-extra;1.4
 x-gl-merge-dirs: &gl-merge-dirs vulkan/icd.d;glvnd/egl_vendor.d;egl/egl_external_platform.d;OpenCL/vendors;lib/dri;lib/d3d;lib/gbm;vulkan/explicit_layer.d;vulkan/implicit_layer.d;vdpau
@@ -39,7 +38,7 @@ finish-args:
 add-extensions:
   org.freedesktop.Platform.Compat.i386:
     directory: lib/i386-linux-gnu
-    version: *freedesktop-runtime-version
+    version: 25.08
 
   org.freedesktop.Platform.GL32:
     directory: lib/i386-linux-gnu/GL
@@ -56,8 +55,8 @@ add-extensions:
 
   org.freedesktop.Platform.VAAPI.Intel.i386:
     directory: lib/i386-linux-gnu/dri/intel-vaapi-driver
-    version: *freedesktop-runtime-version
-    versions: *freedesktop-runtime-version
+    version: 25.08
+    versions: 25.08
     autodelete: false
     no-autodownload: true
     add-ld-path: lib
@@ -66,8 +65,8 @@ add-extensions:
 
   org.freedesktop.Platform.VAAPI.nvidia.i386:
     directory: i386/nvidia-vaapi-driver
-    version: *freedesktop-runtime-version
-    versions: *freedesktop-runtime-version
+    version: 25.08
+    versions: 25.08
     autodelete: false
     no-autodownload: true
     add-ld-path: lib
@@ -82,7 +81,7 @@ add-extensions:
 
   org.freedesktop.Platform.VulkanLayer.MangoHud:
     directory: lib/extensions/vulkan/MangoHud
-    version: *freedesktop-runtime-version
+    version: 25.08
     autodownload: true
     autodelete: false
 
